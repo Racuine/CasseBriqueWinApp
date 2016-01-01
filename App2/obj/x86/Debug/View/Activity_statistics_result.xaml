@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="App2.View.Activity_statistics_result"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2.View"
+    xmlns:model="using:App2.Model"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <AppBar >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="90"/>
+                </Grid.ColumnDefinitions>
+                <AppBarButton x:ConnectionId='2' x:Uid="MenuJoueur" Content="Jouer" Grid.Column="0"                   />
+                <AppBarButton x:ConnectionId='3' x:Uid="MenuOption" Content="Option" Grid.Column="1"                    />
+                <AppBarButton x:ConnectionId='4' x:Uid="MenuStatistiques" Content="Statistiques" Grid.Column="2"                          />
+                <AppBarButton x:ConnectionId='5' x:Uid="MenuClassement" Content="Classement" Grid.Column="3"                        />
+            </Grid>
+        </AppBar>
+        <ListView x:ConnectionId='1' x:Name="HistoriqueListView" IsItemClickEnabled="True" Margin="0,50,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate                              >
+                    <Grid Margin="30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Uid="stat_result_date" Text="Date : " Grid.Column="0" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                        <TextBlock Text="{Binding DateScore.Year}" Grid.Column="1" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                        <TextBlock Text="-" Grid.Column="2" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                        <TextBlock Text="{Binding DateScore.Month}" Grid.Column="3" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                        <TextBlock Text="-" Grid.Column="4" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                        <TextBlock Text="{Binding DateScore.Day}" Grid.Column="5" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                        <TextBlock x:Uid="stat_result_score" Text=" Score : " Grid.Column="6" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+                        <TextBlock Text="{Binding Score}" Grid.Column="7" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
+

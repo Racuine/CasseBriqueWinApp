@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="App2.Vues.Activity_statistics"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2.Vues"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel x:Name ="StatistiquesPanel" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <AppBar>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="90"/>
+                    </Grid.ColumnDefinitions>
+                    <AppBarButton x:Uid="MenuJoueur" Content="Jouer" Grid.Column="0" Click="AllerJouer"/>
+                    <AppBarButton x:Uid="MenuOption" Content="Option" Grid.Column="1" Click="AllerOption"/>
+                    <AppBarButton x:Uid="MenuStatistiques" Content="Statistiques" Grid.Column="2" Click="AllerStatistiques"/>
+                    <AppBarButton x:Uid="MenuClassement" Content="Classement" Grid.Column="3" Click="AllerClassement"/>
+                </Grid>
+            </AppBar>
+            <TextBlock x:Uid="stat_titre" x:Name="textBlock4" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Statistiques" VerticalAlignment="Top" Style="{ThemeResource HeaderTextBlockStyle}"/>
+            <TextBlock x:Uid="stat_meilleurScore" x:Name="textBlock" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Meilleur score : " VerticalAlignment="Top"/>
+            <TextBlock x:Name="MeileurScore" Text="{Binding Statistiques.MeilleurScore}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="0" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+            <TextBlock x:Uid="stat_niveau" x:Name="textBlock1" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Niveau : " VerticalAlignment="Top"/>
+            <TextBlock x:Name="Niveau"  Text="{Binding Statistiques.Niveau}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="0" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+            <TextBlock x:Uid="stat_experience" x:Name="textBlock2" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Expérience : " VerticalAlignment="Top"/>
+            <TextBlock x:Name="Experience"  Text="{Binding Experience}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="0" Style="{ThemeResource TitleTextBlockStyle}"></TextBlock>
+            <TextBlock x:Uid="stat_diffiulte" x:Name="textBlock5" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Historique des Scores" VerticalAlignment="Top" Style="{ThemeResource HeaderTextBlockStyle}"/>
+            <TextBlock x:Uid="stat_rech_par_niveau" x:Name="textBlock3" HorizontalAlignment="Left" Margin="5" TextWrapping="Wrap" Text="Niveau de difficulté : " VerticalAlignment="Top"/>
+            <Slider x:Name="slider" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="138" Minimum="1" Maximum="10" Value="{Binding NiveauRecherche, Mode=TwoWay}"/>
+            <Button x:Uid="stat_rechercher" x:Name="ButtonRechercherStat" Content="Rerchercher"   Margin="0,30,0,0" HorizontalAlignment="Center" Command="{Binding Recherche}"/>
+        </StackPanel>
+    </Grid>
+</Page>

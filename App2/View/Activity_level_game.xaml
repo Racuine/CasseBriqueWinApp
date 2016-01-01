@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="App2.Vues.Activity_level_game"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2.Vues"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel x:Name ="JeuPanel" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <AppBar >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="90"/>
+                    </Grid.ColumnDefinitions>
+                    <AppBarButton x:Uid="MenuJoueur" Content="Jouer" Grid.Column="0" Click="AllerJouer"/>
+                    <AppBarButton x:Uid="MenuOption" Content="Option" Grid.Column="1" Click="AllerOption"/>
+                    <AppBarButton x:Uid="MenuStatistiques" Content="Statistiques" Grid.Column="2" Click="AllerStatistiques"/>
+                    <AppBarButton x:Uid="MenuClassement" Content="Classement" Grid.Column="3" Click="AllerClassement"/>
+                </Grid>
+            </AppBar>
+            <TextBlock x:Uid="level_titre"  x:Name="textBlock2" HorizontalAlignment="Left" Margin="17,54,0,0" TextWrapping="Wrap" Text="Choix du niveau" VerticalAlignment="Top" Style="{ThemeResource HeaderTextBlockStyle}"/>
+            <Grid BorderThickness="50,150,0,0" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="1" Grid.Row="0" Grid.Column="0" Command="{Binding NavigateNiveau1}"/>
+                <Button Content="2" Grid.Row="0" Grid.Column="1" Command="{Binding NavigateNiveau2}"/>
+                <Button Content="3" Grid.Row="0" Grid.Column="2" Command="{Binding NavigateNiveau3}"/>
+                <Button Content="4" Grid.Row="0" Grid.Column="3" Command="{Binding NavigateNiveau4}"/>
+                <Button Content="7" Grid.Row="1" Grid.Column="1" Command="{Binding NavigateNiveau5}"/>
+                <Button Content="8" Grid.Row="1" Grid.Column="2" Command="{Binding NavigateNiveau6}"/>
+                <Button Content="9" Grid.Row="1" Grid.Column="3" Command="{Binding NavigateNiveau7}"/>
+                <Button Content="5" Grid.Row="0" Grid.Column="4" Command="{Binding NavigateNiveau8}"/>
+                <Button Content="6" Grid.Row="1" Grid.Column="0" Command="{Binding NavigateNiveau9}"/>
+                <Button Content="10" Grid.Row="1" Grid.Column="4" Command="{Binding NavigateNiveau10}"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>
